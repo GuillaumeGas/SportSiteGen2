@@ -3,8 +3,12 @@
 class News {
 
     public static function getAll() {
-        return array("test1", "test2");
+        global $bdd;
+        $query = $bdd->prepare("SELECT * FROM news");
+        $query->execute();
+        return $query->fetchAll();
     }
+
 
 }
 

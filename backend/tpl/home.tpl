@@ -2,6 +2,6 @@
     Home !<br>
     News :
     {foreach $News as $n}
-        {$n},
+        {$n.titre},
     {/foreach}
 </div>
