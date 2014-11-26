@@ -7,4 +7,5 @@
     {/foreach}
     </ul>
 
+    <b>{$c.date}</b>
 </div>
