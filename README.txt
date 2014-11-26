@@ -18,7 +18,7 @@ Tree structure :
 
 ./config/config_init.php :
 
-This file start the session, includes Smarty, load the core files, and performs the connection to database.
+This file starts the session, includes Smarty, loads the core files, and performs the connection to database.
 
 ./config/defines.inc.php :
 
