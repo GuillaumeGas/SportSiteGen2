@@ -30,7 +30,7 @@ class News {
      * @param $val
      * @return array
      */
-    public static function getNewsLike($val) {
+    public static function getLike($val) {
         global $bdd;
         $val .= '%';
         $query = $bdd->prepare("SELECT * FROM news WHERE title LIKE :val ORDER BY id DESC");
@@ -47,7 +47,7 @@ class News {
      * @param $id_photo
      * @return bool
      */
-    public static function addNews($title, $text, $date, $author, $id_photo) {
+    public static function add($title, $text, $date, $author, $id_photo) {
         global $bdd;
         $query = $bdd->prepare("INSERT INTO news VALUES(NULL, :title, :date, :text, :id_photo, :author)");
         return $query->execute(array(":title" => $title,
@@ -67,7 +67,7 @@ class News {
      * @param $id_photo
      * @return bool
      */
-    public static function setNews($id_news, $title, $text, $date, $author, $id_photo) {
+    public static function set($id_news, $title, $text, $date, $author, $id_photo) {
         global $bdd;
         $query = $bdd->prepare("UPDATE news SET title = :title, date = :date, text = :text, idPhoto = :id_photo, author = :author WHERE id = :id_news");
         return $query->execute(array(":title" => $title,
@@ -83,7 +83,7 @@ class News {
      * @param $id_news
      * @return bool
      */
-    public static function delNews($id_news) {
+    public static function del($id_news) {
         global $bdd;
         $query = $bdd->prepare("DELETE FROM news WHERE id = :id_news");
         return $query->execute(array(":id_news" => $id_news)) == 0;
