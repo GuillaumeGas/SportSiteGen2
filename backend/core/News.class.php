@@ -86,7 +86,7 @@ class News {
     public static function delNews($id_news) {
         global $bdd;
         $query = $bdd->prepare("DELETE FROM news WHERE id = :id_news");
-        return $query->execute(array(":id_news" => $id_news));
+        return $query->execute(array(":id_news" => $id_news)) == 0;
     }
 
 }
