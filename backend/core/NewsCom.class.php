@@ -25,6 +25,22 @@ class NewsCom {
         return $query->fetch();
     }
 
+    /**
+     * @brief add a com
+     * @param $text
+     * @param $date
+     * @param $id_news
+     * @param $id_user
+     * @return bool
+     */
+    public static function add($text, $date, $id_news, $id_user) {
+        global $bdd;
+        $query = $bdd->prepare("INSERT INTO news_com VALUES(NULL, :text, :date, :id_news, :id_user)");
+        return $query->execute(array(":text" => $text,
+                              ":date" => $date,
+                              ":id_news" => $id_news,
+                              ":id_user" => $id_user));
+    }
 
 
 }
