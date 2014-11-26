@@ -42,6 +42,25 @@ class NewsCom {
                               ":id_user" => $id_user));
     }
 
+    /**
+     * @brief modify a com
+     * @param $id_com
+     * @param $text
+     * @param $date
+     * @param $id_news
+     * @param $id_user
+     * @return bool
+     */
+    public static function set($id_com, $text, $date, $id_news, $id_user) {
+        global $bdd;
+        $query = $bdd->prepare("UPDATE news_com SET text = :text, date = :date, idNews = :id_news, idUser = :id_user WHERE id = :id_com");
+        return $query->execute(array(":text" => $text,
+                              ":date" => $date,
+                              ":id_news" => $id_news,
+                              ":id_user" => $id_user,
+                              ":id_com"  => $id_com));
+    }
+
 
 }
 
