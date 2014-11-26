@@ -33,9 +33,60 @@ class News {
     public static function getNewsLike($val) {
         global $bdd;
         $val .= '%';
-        $query = $bdd->prepare("SELECT * FROM news WHERE titre LIKE :val ORDER BY id DESC");
+        $query = $bdd->prepare("SELECT * FROM news WHERE title LIKE :val ORDER BY id DESC");
         $query->execute(array(":val" => $val));
         return $query->fetchAll();
+    }
+
+    /**
+     * @brief Adds a news
+     * @param $title
+     * @param $text
+     * @param $date
+     * @param $author
+     * @param $id_photo
+     * @return bool
+     */
+    public static function addNews($title, $text, $date, $author, $id_photo) {
+        global $bdd;
+        $query = $bdd->prepare("INSERT INTO news VALUES(NULL, :title, :date, :text, :id_photo, :author)");
+        return $query->execute(array(":title" => $title,
+                                     ":date"  => $date,
+                                     ":text"  => $text,
+                                     ":id_photo" => $id_photo,
+                                     ":author" => $author));
+    }
+
+    /**
+     * @brief to modify a news
+     * @param $id_news
+     * @param $title
+     * @param $text
+     * @param $date
+     * @param $author
+     * @param $id_photo
+     * @return bool
+     */
+    public static function setNews($id_news, $title, $text, $date, $author, $id_photo) {
+        global $bdd;
+        $query = $bdd->prepare("UPDATE news SET title = :title, date = :date, text = :text, idPhoto = :id_photo, author = :author WHERE id = :id_news");
+        return $query->execute(array(":title" => $title,
+                                     ":date"  => $date,
+                                     ":text"  => $text,
+                                     ":id_photo" => $id_photo,
+                                     ":author"   => $author,
+                                     ":id_news"  => $id_news));
+    }
+
+    /**
+     * @brief to delete a news
+     * @param $id_news
+     * @return bool
+     */
+    public static function delNews($id_news) {
+        global $bdd;
+        $query = $bdd->prepare("DELETE FROM news WHERE id = :id_news");
+        return $query->execute(array(":id_news" => $id_news));
     }
 
 }
