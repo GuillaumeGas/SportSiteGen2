@@ -61,7 +61,16 @@ class NewsCom {
                               ":id_com"  => $id_com));
     }
 
-
+    /**
+     * @brief delete a com
+     * @param $id_com
+     * @return bool
+     */
+    public static function del($id_com) {
+        global $bdd;
+        $query = $bdd->prepare("DELETE FROM news_com WHERE id = :id_com");
+        return $query->execute(array(":id_com" => $id_com));
+    }
 }
 
 ?>
