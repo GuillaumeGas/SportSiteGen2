@@ -26,6 +26,18 @@ class NewsCom {
     }
 
     /**
+     * @brief get a com with a specified news id
+     * @param $id_com
+     * @return mixed
+     */
+    public static function getFromNewsId($id_news) {
+        global $bdd;
+        $query = $bdd->prepare("SELECT * FROM news_com WHERE idNews = :id_news");
+        $query->execute(array(":id_news" => $id_news));
+        return $query->fetchAll();
+    }
+
+    /**
      * @brief add a com
      * @param $text
      * @param $date
