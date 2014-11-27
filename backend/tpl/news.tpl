@@ -14,6 +14,7 @@
             <input type="submit" value="ok"/>
         </form>
     {else}
+        <a href="index.php?page=formAddNews">Add a news</a><br>
         <form method="POST" action="index.php?page=news&action=delNews">
             <ul>
                 {foreach $ListNews as $news}
