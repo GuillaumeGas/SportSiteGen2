@@ -34,7 +34,17 @@ class NewsCom {
         global $bdd;
         $query = $bdd->prepare("SELECT * FROM news_com WHERE idNews = :id_news");
         $query->execute(array(":id_news" => $id_news));
-        return $query->fetchAll();
+
+        $result = array();
+        $i = 0;
+        //we get author of each com
+        while($com = $query->fetch()) {
+            $author = User::getFromId($com['idUser']);
+            $result[$i] = $com;
+            $result[$i++]['author'] = $author['nickname'];
+        }
+
+        return $result;
     }
 
     /**
