@@ -9,6 +9,9 @@
         <link rel="stylesheet" type="text/css" href="font-awesome/css/font-awesome.min.css" />
         <link rel="stylesheet" type="text/css" href="web/css/local.css" />
 
+        <script type="text/javascript" src="web/js/jquery-1.10.2.min.js"></script>
+        <script type="text/javascript" src="web/js/bootstrap.min.js"></script>
+
     </head>
     <body>
     <div id="wrapper">

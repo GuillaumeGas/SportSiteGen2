@@ -15,4 +15,8 @@ foreach($core_files as $file) {
 }
 
 $smarty = new Smarty();
+
+//TMP
+$_SESSION['admin'] = array("id" => 1, "nickname" => "admin", "mail" => "admin@truc.fr", "idPhoto" => 1);
+$_SESSION['admin_connected'] = true;
 ?>
