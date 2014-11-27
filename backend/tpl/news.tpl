@@ -1,5 +1,6 @@
 <div>
     {if isset($ShowCom)}
+        <a href="index.php?page=formSetNews&id={$News.id}">Modify</a><br>
         {$News.id} - {$News.author} : {$News.text}
 
         <br>
