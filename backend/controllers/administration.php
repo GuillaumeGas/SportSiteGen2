@@ -23,6 +23,8 @@ function get_menu() {
     }
     $positions[] = $positions[count($positions)-1]++;
 
+    sort($positions);
+
     $smarty->assign("Menu", $menu);
     $smarty->assign("Positions", $positions);
     $formMenu = $smarty->fetch(_TPL_."admin_tabs/formMenu.tpl");

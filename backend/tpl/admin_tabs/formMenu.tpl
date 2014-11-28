@@ -6,8 +6,8 @@
     <form method="POST" action="index.php?page=administration&tab=menu&action=setMenu">
         <table class="table table-striped table-hover ">
            <tr>
-               <td>Title : </td><td><input type="text" class="form-control" name="title"/></td>
-               <td>Fonctionnality name : </td><td><input type="text" class="form-control" name="name"/></td>
+               <td>Titre : </td><td><input type="text" class="form-control" name="title"/></td>
+               <td>Nom de la fonctionnalité : </td><td><input type="text" class="form-control" name="name"/></td>
                <td>Position :</td><td>
                    <select name="position" class="form-control" >
                     {foreach $Positions as $pos}
