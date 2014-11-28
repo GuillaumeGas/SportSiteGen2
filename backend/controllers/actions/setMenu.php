@@ -34,7 +34,24 @@ if(isset($_GET['id'])) {
             Menu::setPosition($menu[$i+1]['id'], $menu[$i+1]['position']);
         }
     } else if(isset($_GET['down'])) {
-        Message::info("ok");
+        $menu = Menu::getAll();
+
+        $i = 0;
+        while($menu[$i]['id'] != $_GET['id'] && $i < count($menu)-1) {
+            $i++;
+        }
+
+        if($i < count($menu)-1) {
+            $tmp = $menu[$i];
+            $menu[$i] = $menu[$i+1];
+            $menu[$i+1] = $tmp;
+
+            $menu[$i]['position']--;
+            $menu[$i+1]['position']++;
+
+            Menu::setPosition($menu[$i]['id'], $menu[$i]['position']);
+            Menu::setPosition($menu[$i+1]['id'], $menu[$i+1]['position']);
+        }
     } else if(isset($_GET['delete'])) {
         Message::info("ok");
     }
