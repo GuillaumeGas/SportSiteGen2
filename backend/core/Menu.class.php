@@ -50,6 +50,12 @@ class Menu {
         return $res['disabled'];
     }
 
+    public static function setPosition($id, $position) {
+        global $bdd;
+        $query = $bdd->prepare("UPDATE menu_admin SET position = :position WHERE id = :id");
+        return $query->execute(array(":position" => $position, ":id" => $id));
+    }
+
 }
 
 ?>

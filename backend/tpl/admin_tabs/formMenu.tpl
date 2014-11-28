@@ -26,7 +26,7 @@
                 <td>{$elem.url}</td>
                 <td width="12%">
                     {if $elem.disabled == 1}
-                        <a href="index.php?page=administration&tab=menu&action=setMenu&disabled=1&id={$elem.id}" class="btn btn-danger btn-xs">disabled</a>
+                        <a href="index.php?page=administration&tab=menu&action=setMenu&disabled=1&id={$elem.id}" class="btn btn-warning btn-xs">disabled</a>
                     {else}
                         <a href="index.php?page=administration&tab=menu&action=setMenu&disabled=0&id={$elem.id}" class="btn btn-success btn-xs">enabled</a>
                     {/if}
