@@ -78,6 +78,7 @@
         </nav>
 
 <div>
+
 {if isset($Message)}
     {if $TypeMessage == "info"}
         <div class="alert alert-dismissable alert-success">
