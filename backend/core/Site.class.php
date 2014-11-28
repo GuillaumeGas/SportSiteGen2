@@ -21,7 +21,7 @@ class Site {
         global $bdd;
         $query = $bdd->prepare("SELECT name FROM site");
         $query->execute();
-        return $query->fetch();
+        return $query->fetch()['name'];
     }
 
     /**
@@ -32,7 +32,7 @@ class Site {
         global $bdd;
         $query = $bdd->prepare("SELECT url FROM site");
         $query->execute();
-        return $query->fetch();
+        return $query->fetch()['url'];
     }
 
     /**
@@ -43,7 +43,7 @@ class Site {
         global $bdd;
         $query = $bdd->prepare("SELECT current_template FROM site");
         $query->execute();
-        return $query->fetch();
+        return $query->fetch()['current_template'];
     }
 
 }

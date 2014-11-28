@@ -30,8 +30,11 @@
             <div class="collapse navbar-collapse navbar-ex1-collapse">
                 <ul id="active" class="nav navbar-nav side-nav">
 
-                        <li><a href="index.php?page=news">News</a></li>
-
+                    {foreach $Menu as $elem}
+                        {if $elem.disabled == 0}
+                            <li><a href="{$elem.url}">{$elem.name}</a></li>
+                        {/if}
+                    {/foreach}
                 </ul>
 
                 <ul class="nav navbar-nav navbar-right navbar-user">
