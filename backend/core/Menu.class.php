@@ -2,6 +2,10 @@
 
 class Menu {
 
+    /**
+     * @brief get all elements of the menu
+     * @return array
+     */
     public static function getAll() {
         global $bdd;
 
@@ -9,6 +13,41 @@ class Menu {
         $query->execute();
 
         return $query->fetchAll();
+    }
+
+    /**
+     * @brief disable the element
+     * @param $id
+     * @return bool
+     */
+    public static function disable($id) {
+        global $bdd;
+        $query = $bdd->prepare("UPDATE menu_admin SET disabled = 1 WHERE id = :id");
+        return $query->execute(array(":id" => $id));
+    }
+
+    /**
+     * @brief enable the element
+     * @param $id
+     * @return bool
+     */
+    public static function enable($id) {
+        global $bdd;
+        $query = $bdd->prepare("UPDATE menu_admin SET disabled = 0 WHERE id = :id");
+        return $query->execute(array(":id" => $id));
+    }
+
+    /**
+     * @brief tell us if an element is enabled or not
+     * @param $id
+     * @return true or false
+     */
+    public static function isEnabled($id) {
+        global $bdd;
+        $query = $bdd->prepare("SELECT disabled FROM menu_admin WHERE id = :id");
+        $query->execute(array(":id" => $id));
+        $res = $query->fetch();
+        return $res['disabled'];
     }
 
 }
