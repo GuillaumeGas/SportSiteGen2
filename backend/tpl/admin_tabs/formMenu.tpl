@@ -3,7 +3,7 @@
 </div>
 
 <div class="col-lg-12">
-    <form method="POST" action="index.php?page=administration&tab=menu&action=addMenu">
+    <form method="POST" action="index.php?page=administration&tab=menu&action=setMenu">
         <table class="table table-striped table-hover ">
            <tr>
                <td>Title : </td><td><input type="text" class="form-control" name="title"/></td>
@@ -15,6 +15,7 @@
                     {/foreach}
                    </select>
                </td>
+               <td><input type="submit" value="Add"/></td>
            </tr>
         </table>
     </form>

@@ -21,6 +21,7 @@ function get_menu() {
     foreach($menu as $elem) {
         $positions[] = $elem['position'];
     }
+    $positions[] = $positions[count($positions)-1]++;
 
     $smarty->assign("Menu", $menu);
     $smarty->assign("Positions", $positions);

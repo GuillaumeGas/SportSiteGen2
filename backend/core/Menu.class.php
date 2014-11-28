@@ -50,10 +50,34 @@ class Menu {
         return $res['disabled'];
     }
 
+    /**
+     * @brief modify the position attribute of an element of the menu
+     * @param $id
+     * @param $position
+     * @return bool
+     */
     public static function setPosition($id, $position) {
         global $bdd;
         $query = $bdd->prepare("UPDATE menu_admin SET position = :position WHERE id = :id");
         return $query->execute(array(":position" => $position, ":id" => $id));
+    }
+
+
+    /**
+     * @brief delete an element of the menu
+     * @param $id
+     * @return bool
+     */
+    public static function del($id) {
+        global $bdd;
+        $query = $bdd->prepare("DELETE FROM menu_admin WHERE id = :id");
+        return $query->execute(array(":id" => $id));
+    }
+
+    public static function add($title, $name_fonctionnality, $disabled, $position) {
+        global $bdd;
+        $query = $bdd->prepare("INSERT INTO menu_admin VALUES(NULL, :title, :name_fonc, :disabled, :position)");
+        return $query->execute(array(":title" => $title, ":name_fonc" => $name_fonctionnality, ":disabled" => $disabled, ":position" => $position));
     }
 
 }
