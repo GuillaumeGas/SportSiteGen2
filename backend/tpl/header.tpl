@@ -24,7 +24,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.php"> - Administration</a>
+                <a class="navbar-brand" href="index.php">{$SiteName} - Administration</a>
             </div>
 
             <div class="collapse navbar-collapse navbar-ex1-collapse">

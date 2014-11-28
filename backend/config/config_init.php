@@ -16,6 +16,11 @@ foreach($core_files as $file) {
 
 $smarty = new Smarty();
 
+//we get site name, template..
+$website_name = Site::getName();
+$smarty->assign("SiteName", $website_name);
+
+
 //TMP
 $_SESSION['admin'] = array("id" => 1, "nickname" => "admin", "mail" => "admin@truc.fr", "idPhoto" => 1);
 $_SESSION['admin_connected'] = true;
