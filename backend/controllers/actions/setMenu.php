@@ -64,7 +64,8 @@ if(isset($_GET['id'])) {
 } else {
     if(isset($_POST['title']) && isset($_POST['name']) && isset($_POST['position'])) {
         $title = htmlentities($_POST['title']);
-        $name  = "index.php?page=".htmlentities($_POST['name']);
+        $url  = "index.php?page=".htmlentities($_POST['name']);
+        $name_fonc  = htmlentities($_POST['name']);
         $position = $_POST['position'];
 
         $menu = Menu::getAll();
@@ -80,7 +81,7 @@ if(isset($_GET['id'])) {
                 }
             }
         }
-        Menu::add($title, $name, 0, $position);
+        Menu::add($title, $name_fonc, $url, 0, $position);
     } else {
         Message::error("Error when adding a new element in the menu.");
     }

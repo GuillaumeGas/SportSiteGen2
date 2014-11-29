@@ -74,10 +74,10 @@ class Menu {
         return $query->execute(array(":id" => $id));
     }
 
-    public static function add($title, $name_fonctionnality, $disabled, $position) {
+    public static function add($title, $name_fonctionnality, $url, $disabled, $position) {
         global $bdd;
-        $query = $bdd->prepare("INSERT INTO menu_admin VALUES(NULL, :title, :name_fonc, :disabled, :position)");
-        return $query->execute(array(":title" => $title, ":name_fonc" => $name_fonctionnality, ":disabled" => $disabled, ":position" => $position));
+        $query = $bdd->prepare("INSERT INTO menu_admin VALUES(NULL, :title, :name_fonc, :url, :disabled, :position)");
+        return $query->execute(array(":title" => $title, ":name_fonc" => $name_fonctionnality, ":url" => $url, ":disabled" => $disabled, ":position" => $position));
     }
 
 }

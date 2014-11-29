@@ -32,7 +32,7 @@
 
                     {foreach $Menu as $elem}
                         {if $elem.disabled == 0}
-                            <li><a href="{$elem.url}">{$elem.name}</a></li>
+                            <li {if $CurrentPage == $elem.fonctionnality_name} class="selected" {/if}><a href="{$elem.url}">{$elem.name}</a></li>
                         {/if}
                     {/foreach}
                 </ul>
