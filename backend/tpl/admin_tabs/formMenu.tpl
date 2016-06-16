@@ -23,7 +23,7 @@
         {foreach $Menu as $elem}
             <tr>
                 <td>{$elem.position}</td>
-                <th>{$elem.name}</th>
+                <th>{$elem.title}</th>
                 <td>{$elem.url}</td>
                 <td width="12%">
                     {if $elem.disabled == 1}

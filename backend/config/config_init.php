@@ -23,9 +23,4 @@ $smarty->assign("SiteName", $website_name);
 //we get the menu
 $menu = Menu::getAll();
 $smarty->assign("Menu", $menu);
-
-
-//TMP
-$_SESSION['admin'] = array("id" => 1, "nickname" => "admin", "mail" => "admin@truc.fr", "idPhoto" => 1);
-$_SESSION['admin_connected'] = true;
 ?>

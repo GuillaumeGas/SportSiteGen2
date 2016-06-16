@@ -13,6 +13,12 @@ if(isset($_POST['id_news'])) {
         News::del($id_news);
     }
     Message::info("Removal done.");
+} else if(isset($_GET['id_news'])) {
+    if(NewsCom::del($_GET['id_news'])) {
+        Message::info("Removal done.");
+    } else {
+        Message::error("Error, the news doesn't exist.");
+    }
 } else {
     Message::error("Error parameters.");
 }

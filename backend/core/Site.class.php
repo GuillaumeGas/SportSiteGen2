@@ -19,9 +19,9 @@ class Site {
      */
     public static function getName() {
         global $bdd;
-        $query = $bdd->prepare("SELECT name FROM site");
+        $query = $bdd->prepare("SELECT Nom FROM site");
         $query->execute();
-        return $query->fetch()['name'];
+        return $query->fetch()['Nom'];
     }
 
     /**

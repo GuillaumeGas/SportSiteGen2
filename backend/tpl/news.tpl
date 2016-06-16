@@ -10,17 +10,17 @@
                 <div class="col-lg-12">
                     <table>
                         <tr>
-                            <td><a href="index.php?page=formSetNews&id={$News.id}"   class="btn btn-primary btn-xs" style="text-decoration: none;">Modify</a></td>
-                            <td><a href="index.php?page=news&action=delNews&id={$News.id}" class="btn btn-danger btn-xs" style="text-decoration: none;">Delete</a></td>
+                            <td><a href="index.php?page=formSetNews&id={$News.Id}"   class="btn btn-primary btn-xs" style="text-decoration: none;">Modify</a></td>
+                            <td><a href="index.php?page=news&action=delNews&id_news={$News.Id}" class="btn btn-danger btn-xs" style="text-decoration: none;">Delete</a></td>
                         </tr>
                     </table>
                 </div>
                 <div class="col-lg-12">
                     <div class="row">
                         <div class="panel panel-default">
-                            <div class="panel-heading"><a href="index.php?page=news&action=read_news&id_news={$News.id}"><u>{$News.title}</u></a> - <i>{$News.date}</i></div>
+                            <div class="panel-heading"><a href="index.php?page=news&action=read_news&id={$News.Id}"><u>{$News.titre}</u></a> - <i>{$News.date}</i></div>
                             <div class="panel-body">
-                                {$News.text}
+                                {$News.contenu}
                             </div>
                         </div>
                     </div>
@@ -28,14 +28,14 @@
             </div>
 
             {foreach from=$ListComs item=com}
-                <div class="row" id="com_{$com.id}">
+                <div class="row" id="com_{$com.Id}">
                     <div class="well">
                         <h4><u>{$com.utilisateur}</u></a> - <i>{$com.date}</i>
-                            <a href="index.php?page=formSetCom&id={$com.id}&id_news={$com.idNews}#com_{$com.id}"   class="btn btn-primary btn-xs" style="text-decoration: none;">Modify</a>
-                            <a href="index.php?page=news&id_news={$com.idNews}&action=delCom&id={$com.id}" class="btn btn-danger btn-xs" style="text-decoration: none;">Delete</a></h4>
+                            <a href="index.php?page=formSetCom&id={$com.Id}&id_news={$com.idNews}#com_{$com.Id}"   class="btn btn-primary btn-xs" style="text-decoration: none;">Modify</a>
+                            <a href="index.php?page=news&id_news={$com.idNews}&action=delCom&id={$com.Id}" class="btn btn-danger btn-xs" style="text-decoration: none;">Delete</a></h4>
                         <form role="form">
                             <div class="form-group">
-                                {$com.text}
+                                {$com.contenu}
                             </div>
                         </form>
                     </div>
@@ -59,9 +59,9 @@
                 {foreach $ListNews as $news}
                     <div class="row">
                         <div class="panel panel-default">
-                            <div class="panel-heading"><input type="checkbox" name="id_news[]" value="{$news.id}"/> <a href="index.php?page=news&id={$news.id}"><u>{$news.title}</u></a> - <i>{$news.date}</i></div>
+                            <div class="panel-heading"><input type="checkbox" name="id_news[]" value="{$news.Id}"/> <a href="index.php?page=news&id={$news.Id}"><u>{$news.titre}</u></a> - <i>{$news.date}</i></div>
                             <div class="panel-body">
-                                {$news.text}
+                                {$news.contenu}
                             </div>
                         </div>
                     </div>

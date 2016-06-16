@@ -32,7 +32,7 @@
 
                     {foreach $Menu as $elem}
                         {if $elem.disabled == 0}
-                            <li {if $CurrentPage == $elem.fonctionnality_name} class="selected" {/if}><a href="{$elem.url}">{$elem.name}</a></li>
+                            <li {if $CurrentPage == $elem.name_fonc} class="selected" {/if}><a href="{$elem.url}">{$elem.title}</a></li>
                         {/if}
                     {/foreach}
                 </ul>
@@ -77,20 +77,20 @@
             </div>
         </nav>
 
-<div>
+        <div>
 
-{if isset($Message)}
-    {if $TypeMessage == "info"}
-        <div class="alert alert-dismissable alert-success">
-            <button type="button" class="close" data-dismiss="alert">×</button>
-            {$Message}
-        </div>
-    {else}
-        <div class="alert alert-dismissable alert-danger">
-            <button type="button" class="close" data-dismiss="alert">×</button>
-            <strong>Oh snap!</strong> <a href="#" class="alert-link">Change a few things up</a> and try submitting again.
-        </div>
-        {$Message}
-    {/if}
-{/if}
-</div>
+        {if isset($Message)}
+            {if $TypeMessage == "info"}
+                <div class="alert alert-dismissable alert-success">
+                    <button type="button" class="close" data-dismiss="alert">×</button>
+                    {$Message}
+                </div>
+            {else}
+                <div class="alert alert-dismissable alert-danger">
+                    <button type="button" class="close" data-dismiss="alert">×</button>
+                    <strong>Oh snap!</strong> <a href="#" class="alert-link">Change a few things up</a> and try submitting again.
+                </div>
+                {$Message}
+            {/if}
+        {/if}
+    </div>
