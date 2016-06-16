@@ -15,7 +15,7 @@
                     {/foreach}
                    </select>
                </td>
-               <td><input type="submit" value="Add"/></td>
+               <td><button type="button" onclick="submit()" class="btn btn-primary">Add</button></td>
            </tr>
         </table>
     </form>

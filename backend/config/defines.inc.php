@@ -22,4 +22,7 @@ define('_LOGS_', _PATH_.'logs/');
 
 //root of template files
 define('_TPL_', _PATH_.'tpl/');
+
+//root of front
+define('_FRONT_', _PATH_."../frontend/");
 ?>

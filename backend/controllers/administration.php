@@ -3,10 +3,13 @@
 global $smarty;
 
 if(isset($_GET['tab'])) {
-    $smarty->assign("CurrentTab", $_GET['tab']);
+    $tab = $_GET['tab'];
+    $smarty->assign("CurrentTab", $tab);
 
-    if($_GET['tab'] == "menu") {
+    if($tab == "menu") {
         get_menu();
+    } else if ($tab == "template") {
+        get_template();
     }
 } else {
     get_menu();
@@ -29,8 +32,16 @@ function get_menu() {
     $smarty->assign("Positions", $positions);
     $formMenu = $smarty->fetch(_TPL_."admin_tabs/formMenu.tpl");
     $smarty->assign("ContentTab", $formMenu);
-
     $smarty->assign("CurrentTab", "menu");
+}
+
+function get_template() {
+    global $smarty;
+    $smarty->assign("Templates", Template::getAll());
+    $smarty->assign("CurrentTemplate", Template::getCurrent());
+    $formTemplate = $smarty->fetch(_TPL_."admin_tabs/formTemplate.tpl");
+    $smarty->assign("ContentTab", $formTemplate);
+    $smarty->assign("CurrentTab", "template");
 }
 
 ?>
