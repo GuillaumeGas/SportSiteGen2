@@ -1,3 +1,6 @@
+<div style="margin-bottom: 40px;">
+    <h1 class="page-header" style="display: inline;">NEWS - Add News</h1>
+</div>
 <div>
     <form method="POST" action="index.php?page=news&action=addNews">
         Author : <input type="text" name="author"/><br>

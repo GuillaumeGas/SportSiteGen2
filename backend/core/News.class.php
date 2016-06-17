@@ -69,7 +69,7 @@ class News {
      */
     public static function set($id_news, $title, $text, $date, $author, $id_photo) {
         global $bdd;
-        $query = $bdd->prepare("UPDATE news SET title = :title, date = :date, text = :text, idPhoto = :id_photo, author = :author WHERE id = :id_news");
+        $query = $bdd->prepare("UPDATE news SET titre = :title, date = :date, contenu = :text, IdPhoto = :id_photo, auteur = :author WHERE id = :id_news");
         return $query->execute(array(":title" => $title,
                                      ":date"  => $date,
                                      ":text"  => $text,

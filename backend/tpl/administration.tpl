@@ -1,3 +1,6 @@
+<div style="margin-bottom: 40px;">
+    <h1 class="page-header" style="display: inline;">CONFIGURATION</h1>
+</div>
 <div class="row">
     <ul class="nav nav-tabs" style="margin-left: 15px;">
         <li {if $CurrentTab == "menu"} class="active" {/if}><a href="index.php?page=administration&tab=menu" {if $CurrentTab == "menu"} data-toggle="tab" {/if}>Menu</a></li>

@@ -5,7 +5,7 @@ header("Cache-Control: no-cache");
 
 require('defines.inc.php');
 require('mysql_connect.php');//contains the bdd var
-require(_PATH_.'web/tools/Smarty/libs/Smarty.class.php');
+require(_CORE_.'utils/Smarty/libs/Smarty.class.php');
 
 //we load the core files
 $core_files = scandir(_CORE_);

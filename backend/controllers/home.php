@@ -2,8 +2,6 @@
 
 global $smarty;
 
-NewsCom::del(1);
-
 $coms = NewsCom::getAll();
 $smarty->assign("Coms", $coms);
 

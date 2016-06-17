@@ -12,6 +12,7 @@
         <script type="text/javascript" src="web/js/jquery-1.10.2.min.js"></script>
         <script type="text/javascript" src="web/js/bootstrap.min.js"></script>
 
+        <script type="text/javascript" src="web/js/ckeditor/ckeditor.js"></script>
     </head>
     <body>
     <div id="wrapper">
@@ -77,20 +78,19 @@
             </div>
         </nav>
 
-        <div>
-
-        {if isset($Message)}
-            {if $TypeMessage == "info"}
-                <div class="alert alert-dismissable alert-success">
-                    <button type="button" class="close" data-dismiss="alert">×</button>
+        <div class="col-md-12 main">
+            {if isset($Message)}
+                {if $TypeMessage == "info"}
+                    <div class="alert alert-dismissable alert-success">
+                        <button type="button" class="close" data-dismiss="alert">×</button>
+                        {$Message}
+                    </div>
+                {else}
+                    <div class="alert alert-dismissable alert-danger">
+                        <button type="button" class="close" data-dismiss="alert">×</button>
+                        <strong>Oh snap!</strong> <a href="#" class="alert-link">Change a few things up</a> and try submitting again.
+                    </div>
                     {$Message}
-                </div>
-            {else}
-                <div class="alert alert-dismissable alert-danger">
-                    <button type="button" class="close" data-dismiss="alert">×</button>
-                    <strong>Oh snap!</strong> <a href="#" class="alert-link">Change a few things up</a> and try submitting again.
-                </div>
-                {$Message}
+                {/if}
             {/if}
-        {/if}
-    </div>
+
