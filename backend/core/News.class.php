@@ -20,7 +20,7 @@ class News {
      */
     public static function getFromId($id) {
         global $bdd;
-        $query = $bdd->prepare("SELECT * FROM news WHERE id = :id");
+        $query = $bdd->prepare("SELECT * FROM news WHERE Id = :id");
         $query->execute(array(":id" => $id));
         return $query->fetch();
     }
@@ -85,8 +85,8 @@ class News {
      */
     public static function del($id_news) {
         global $bdd;
-        $query = $bdd->prepare("DELETE FROM news WHERE id = :id_news");
-        return $query->execute(array(":id_news" => $id_news)) == 0;
+        $query = $bdd->prepare("DELETE FROM news WHERE Id = :id_news");
+        return $query->execute(array(":id_news" => $id_news)) == 1;
     }
 
 }

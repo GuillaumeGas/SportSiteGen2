@@ -88,9 +88,14 @@
                 {else}
                     <div class="alert alert-dismissable alert-danger">
                         <button type="button" class="close" data-dismiss="alert">×</button>
-                        <strong>Oh snap!</strong> <a href="#" class="alert-link">Change a few things up</a> and try submitting again.
+                        {$Message}
                     </div>
-                    {$Message}
                 {/if}
+            {/if}
+            {if isset($DebugMessage)}
+                <div class="alert alert-dismissable alert-warning">
+                    <button type="button" class="close" data-dismiss="alert">x</button>
+                    {$DebugMessage}
+                </div>
             {/if}
 

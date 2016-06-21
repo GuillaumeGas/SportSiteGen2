@@ -12,6 +12,11 @@ class Message {
         $smarty->assign("TypeMessage", "error");
         $smarty->assign("Message", $message);
     }
+
+    public static function debug($message) {
+        global $smarty;
+        $smarty->assign("DebugMessage", var_dump($message));
+    }
 }
 
 ?>
